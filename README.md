@@ -13,3 +13,5 @@ Toca hacer un programa en prolog en el que se construya un arbol genealogico de 
   * Abuelo
   * Padre
   * Tio
+  * Sobrino
+  * Nieto
