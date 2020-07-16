@@ -27,7 +27,14 @@ esHermano(A,B):- progenitor(C,A),progenitor(C,B), A\==B.
 tio(X,Y):-progenitor(Z,Y),esHermano(X,Z).
 sobrino(X,Y):-esHermano(Z,Y),eshijo(X,Z).
 primo(X,Y):-progenitor(Z,X),progenitor(W,Y),esHermano(Z,W).
-esfamiliar(X,Y):- eshijo(X,Y);esHermano(X,Y);esAbuelo(X,Y); esNieto(X,Y);tio(X,Y);sobrino(X,Y);primo(X,Y);progenitor(X,Y).
+esfamiliar(X,Y):- eshijo(X,Y).
+esfamiliar(X,Y):- esHermano(X,Y).
+esfamiliar(X,Y):- esAbuelo(X,Y).
+esfamiliar(X,Y):- esNieto(X,Y).
+esfamiliar(X,Y):- tio(X,Y).
+esfamiliar(X,Y):- sobrino(X,Y).
+esfamiliar(X,Y):- primo(X,Y).
+esfamiliar(X,Y):- progenitor(X,Y).
 familiares(X,L):- findall(Y,esfamiliar(X,Y),L).
     
     
