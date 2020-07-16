@@ -27,3 +27,4 @@ esHermano(A,B):- progenitor(C,A),progenitor(C,B), A\==B.
 tio(X,Y):-progenitor(Z,Y),esHermano(X,Z).
 sobrino(X,Y):-esHermano(Z,Y),eshijo(X,Z).
 primo(X,Y):-progenitor(Z,X),progenitor(W,Y),esHermano(Z,W).
+
